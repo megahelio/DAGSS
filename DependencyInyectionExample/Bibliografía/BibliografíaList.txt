@@ -1,0 +1,14 @@
+https://www.arquitecturajava.com/el-patron-de-inyeccion-de-dependencia/
+https://jbravomontero.files.wordpress.com/2012/12/solid-y-grasp-buenas-practicas-hacia-el-exito-en-el-desarrollo-de-software.pdf
+https://www.autentia.com/wp-content/uploads/libros/SoftwareDesign_PrincipiosyPatrones-Autentia.pdf
+https://profile.es/blog/principios-solid-desarrollo-software-calidad/
+
+
+Patrones de diseño : elementos de software orientado a objetos reutilizable / Erich Gamma ... [et al.]
+Madrid : Addison Wesley, 2002
+
+https://martinfowler.com
+https://refactoring.com
+
+Software Design in the 21st Century - Martin Fowler - XConf Thailand 2019:
+https://www.youtube.com/watch?v=0ObiqjaJAZ4
