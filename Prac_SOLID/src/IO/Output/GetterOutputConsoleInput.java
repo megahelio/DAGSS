@@ -1,10 +1,12 @@
-package converterapp;
+package IO.Output;
 
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.PrintStream;
 import java.util.Scanner;
+
+import converterapp.GetterOutputInterface;
 
 
 //OCP Class
@@ -15,7 +17,6 @@ public class GetterOutputConsoleInput implements GetterOutputInterface {
         File file = getFile();
         PrintStream toret = null;
         try {
-            // out = new PrintStream(new System.out);
             toret = new PrintStream(new FileOutputStream(file));
         } catch (FileNotFoundException e1) {
             System.err.println("the file " + file.getAbsolutePath()

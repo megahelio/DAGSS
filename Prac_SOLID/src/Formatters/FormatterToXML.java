@@ -1,7 +1,9 @@
-package converterapp;
+package Formatters;
 
 import java.io.PrintStream;
 import java.util.Scanner;
+
+import converterapp.FormatterInterface;
 
 public class FormatterToXML implements FormatterInterface {
 

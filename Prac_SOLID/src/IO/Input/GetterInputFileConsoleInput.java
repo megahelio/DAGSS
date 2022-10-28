@@ -1,11 +1,13 @@
-package converterapp;
+package IO.Input;
 
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
+import converterapp.GetterInputInterface;
+
 //OCP Class
-public class GetterInputFileConsoleInput implements GetterInputFileInterface {
+public class GetterInputFileConsoleInput implements GetterInputInterface {
 
     public Scanner getInputFile() {
         System.out.println("input filename: ");
