@@ -1,8 +1,0 @@
-1. Responsabilidades:
-    1. Lectura de archivos (getInput, getOutput, getFile)
-    2. Transformación de datos (transformando, toXML)
-    3. Programa principal
-2. Principios SOLID usados, como y por qué
-    1. Principio de responsabilidad única, creando clases que solo tienen 
-	una única responsabilidad, así podemos extrapolar el uso de esa clase a 
-	otras clases que necesiten esas funciones.
