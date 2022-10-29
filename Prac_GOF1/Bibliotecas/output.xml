@@ -1,0 +1,12 @@
+<libros>
+<libro>
+<titulo>El Quijote</titulo>
+<autor>Cervantes</autor>
+<isbn>1</isbn>
+</libro>
+<libro>
+<titulo>La Divina Comedia</titulo>
+<autor>Dante</autor>
+<isbn>2</isbn>
+</libro>
+</libros>
