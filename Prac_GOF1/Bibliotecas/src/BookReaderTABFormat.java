@@ -3,6 +3,7 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 
+//Expansible aplicando patron builder
 public class BookReaderTABFormat {
 
     public static void readFile(String path, Library library) {

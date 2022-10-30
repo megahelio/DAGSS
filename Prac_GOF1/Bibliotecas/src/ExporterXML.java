@@ -1,6 +1,8 @@
 import java.io.FileWriter;
 import java.io.PrintWriter;
 
+
+//Expansible aplicando patron builder
 public class ExporterXML {
 
     public static void export(String path, Library library) {
