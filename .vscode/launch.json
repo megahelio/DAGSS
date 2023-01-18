@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-Application<recetas>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "dagss.config.Application",
+            "projectName": "recetas",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}
