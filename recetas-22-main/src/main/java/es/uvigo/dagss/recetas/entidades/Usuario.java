@@ -15,13 +15,15 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
+import javax.persistence.Table;
 import javax.persistence.TableGenerator;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
 @Entity
+@Table(name = "usuarios")
 @Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)  // Una tabla propia para cada subclase
-@DiscriminatorColumn(name = "TIPO_USUARIO",
+@DiscriminatorColumn(name = "rol",
                      discriminatorType = DiscriminatorType.STRING,
                      length = 20)
 public abstract class Usuario implements Serializable {
@@ -33,10 +35,12 @@ public abstract class Usuario implements Serializable {
 
 
     @Enumerated(EnumType.STRING)
-    @Column(name = "TIPO_USUARIO", length = 20)
+    @Column(name = "rol", length = 20)
     protected TipoUsuario tipo;
 
+	@Column(name = "nombre_de_usuario")
     private String login;
+	@Column(name="contrasenha")
     private String password;
 
     @Temporal(TemporalType.TIMESTAMP)
