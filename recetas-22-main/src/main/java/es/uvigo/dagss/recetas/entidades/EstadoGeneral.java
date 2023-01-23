@@ -1,6 +1,6 @@
 package es.uvigo.dagss.recetas.entidades;
 
-public enum Estado {
+public enum EstadoGeneral {
         ACTIVO, INACTIVO
     }
 

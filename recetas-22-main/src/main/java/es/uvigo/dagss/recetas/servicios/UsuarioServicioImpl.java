@@ -7,54 +7,43 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import es.uvigo.dagss.recetas.daos.UsuariosDAO;
-import es.uvigo.dagss.recetas.entidades.UsuarioEntidad;
+import es.uvigo.dagss.recetas.daos.UsuarioDAO;
+import es.uvigo.dagss.recetas.entidades.Usuario;
 
 
 
 @Service
 public class UsuarioServicioImpl implements UsuarioServicio {
     @Autowired
-    UsuariosDAO dao;
+    UsuarioDAO dao;
+
 
     @Override
     @Transactional(readOnly = true)
-    public List<UsuarioEntidad> buscarPorEmail(String email) {
-        return dao.findByEmailContaining(email);
-    }
-
-    @Override
-    @Transactional(readOnly = true)
-    public List<UsuarioEntidad> buscarPorNombre(String nombre) {
-        return dao.findByNombreContaining(nombre);
-    }
-
-    @Override
-    @Transactional(readOnly = true)
-    public List<UsuarioEntidad> buscarTodos() {
+    public List<Usuario> buscarTodos() {
         return dao.findAll();
     }
 
     @Override
     @Transactional(readOnly = true)
-    public Optional<UsuarioEntidad> buscarPorLogin(String login) {
+    public Optional<Usuario> buscarPorLogin(String login) {
         return dao.findById(login);
     }
 
     @Override
-    public void eliminar(UsuarioEntidad usuarioEntidad) {
+    public void eliminar(Usuario usuarioEntidad) {
         dao.delete(usuarioEntidad);
     }
 
     @Override
     @Transactional
-    public UsuarioEntidad modificar(UsuarioEntidad usuarioentidad) {
+    public Usuario modificar(Usuario usuarioentidad) {
         return dao.save(usuarioentidad);
     }
 
     @Override
     @Transactional
-    public UsuarioEntidad crear(UsuarioEntidad usuarioentidad) {
+    public Usuario crear(Usuario usuarioentidad) {
 
         return dao.save(usuarioentidad);
     }

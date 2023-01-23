@@ -1,27 +1,20 @@
 package es.uvigo.dagss.recetas.servicios;
 
-
 import java.util.List;
 import java.util.Optional;
 
-import es.uvigo.dagss.recetas.entidades.UsuarioEntidad;
-
+import es.uvigo.dagss.recetas.entidades.Usuario;
 
 public interface UsuarioServicio {
 
-    List<UsuarioEntidad> buscarPorEmail(String email);
+    List<Usuario> buscarTodos();
 
-    List<UsuarioEntidad> buscarPorNombre(String nombre);
+    Optional<Usuario> buscarPorLogin(String login);
 
-    List<UsuarioEntidad> buscarTodos();
+    void eliminar(Usuario usuarioEntidad);
 
-    Optional<UsuarioEntidad> buscarPorLogin(String login);
+    Usuario modificar(Usuario usuarioentidad);
 
-    void eliminar(UsuarioEntidad usuarioEntidad);
-
-    UsuarioEntidad modificar(UsuarioEntidad usuarioentidad);
-
-    UsuarioEntidad crear(UsuarioEntidad usuarioentidad);
-
+    Usuario crear(Usuario usuarioentidad);
 
 }

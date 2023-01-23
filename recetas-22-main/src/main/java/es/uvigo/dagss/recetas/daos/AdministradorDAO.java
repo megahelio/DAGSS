@@ -2,9 +2,9 @@ package es.uvigo.dagss.recetas.daos;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import es.uvigo.dagss.recetas.entidades.AdministradorEntidad;
+import es.uvigo.dagss.recetas.entidades.Administrador;
 
-public interface AdministradorDAO extends JpaRepository<AdministradorEntidad, String>{
+public interface AdministradorDAO extends JpaRepository<Administrador, String>{
 
 }
 
