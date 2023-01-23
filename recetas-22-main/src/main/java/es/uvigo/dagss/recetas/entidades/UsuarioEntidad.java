@@ -2,6 +2,7 @@ package es.uvigo.dagss.recetas.entidades;
 
 import javax.persistence.*;
 
+@Entity
 public class UsuarioEntidad {
 
     @Id
