@@ -1,6 +1,5 @@
 package entidades;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 import javax.persistence.*;
@@ -19,7 +18,7 @@ public class PreinscripcionEntidad {
         this.indicacion = indicacion;
         this.fechaInicioPreinscripcion = fechaInicioPreinscripcion;
         this.fechaFinPreinscripcion = fechaFinPreinscripcion;
-        this.estado = estado.ACTIVO;
+        this.estado = Estado.ACTIVO;
     }
 
     @Id

@@ -1,4 +1,5 @@
 package entidades;
+
 import java.time.LocalDateTime;
 
 import javax.persistence.*;
@@ -7,17 +8,16 @@ import javax.persistence.*;
 @Table(name = "recetas")
 public class RecetasEntidad {
 
-///CREO QUE ESTA MAL PORQUE TIENE QUE HEREDAR DE MEDICAMENTO CREO
+    /// CREO QUE ESTA MAL PORQUE TIENE QUE HEREDAR DE MEDICAMENTO CREO
 
-
-    public RecetasEntidad(String prenscripcionReceta, LocalDateTime fechaInicioValidez, LocalDateTime fechaFinValidez, int numUnidades, Receta receta) {
+    public RecetasEntidad(String prenscripcionReceta, LocalDateTime fechaInicioValidez, LocalDateTime fechaFinValidez,
+            int numUnidades, Receta receta) {
         this.prenscripcionReceta = prenscripcionReceta;
         this.fechaInicioValidez = fechaInicioValidez;
         this.fechaFinValidez = fechaFinValidez;
         this.numUnidades = numUnidades;
-        this.receta = receta.PLANIFICADA;
+        this.receta = Receta.PLANIFICADA;
     }
-
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -71,5 +71,3 @@ public class RecetasEntidad {
         this.receta = receta;
     }
 }
-
-
