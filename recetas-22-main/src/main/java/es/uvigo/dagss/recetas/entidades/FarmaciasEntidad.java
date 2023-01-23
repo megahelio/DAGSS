@@ -1,4 +1,4 @@
-package entidades;
+package es.uvigo.dagss.recetas.entidades;
 
 import javax.persistence.*;
 

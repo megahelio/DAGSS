@@ -1,10 +1,10 @@
-package daos;
+package es.uvigo.dagss.recetas.daos;
 
 import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import entidades.MedicosEntidad;
+import es.uvigo.dagss.recetas.entidades.MedicosEntidad;
 
 
 public interface MedicosDAO extends JpaRepository<MedicosEntidad, String>{

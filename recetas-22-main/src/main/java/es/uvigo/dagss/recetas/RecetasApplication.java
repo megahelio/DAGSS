@@ -1,3 +1,4 @@
+package es.uvigo.dagss.recetas;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

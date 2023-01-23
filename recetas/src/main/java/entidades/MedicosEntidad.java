@@ -5,9 +5,9 @@ import javax.persistence.*;
 @Entity
 public class MedicosEntidad extends UsuarioEntidad {
 
-    public MedicosEntidad(Long id, String nombre, String apellidos, String dni, String numColegiado, int telefono,
+    public MedicosEntidad(String login, String nombre, String apellidos, String dni, String numColegiado, int telefono,
             String email, String centroSaludAsign, Estado estado, Rol rol) {
-        super(id, nombre, email);
+        super(login, nombre, email);
         this.apellidos = apellidos;
         this.dni = dni;
         this.numColegiado = numColegiado;
@@ -20,8 +20,6 @@ public class MedicosEntidad extends UsuarioEntidad {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-
     @Column(name = "login", unique = true, nullable = false)
     private String login;
 
@@ -56,14 +54,6 @@ public class MedicosEntidad extends UsuarioEntidad {
     @Column(name = "Rol")
     @Enumerated(EnumType.STRING)
     private Rol rol;
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
 
     public String getLogin() {
         return login;

@@ -1,29 +1,23 @@
-package entidades;
+package es.uvigo.dagss.recetas.entidades;
 
 import javax.persistence.*;
 
 @Entity
-public class PacientesEntidad extends UsuarioEntidad {
+public class MedicosEntidad extends UsuarioEntidad {
 
-    public PacientesEntidad(String login, String nombre, String apellidos, String dni, String numTarjetaSanitaria,
-            String numSeguridadSocial, int telefono, String email, String fechaNacimiento, String centroSaludAsign,
-            String medicoAsignado, Estado estado, Rol rol, Direccion direccion) {
+    public MedicosEntidad(String login, String nombre, String apellidos, String dni, String numColegiado, int telefono,
+            String email, String centroSaludAsign, Estado estado, Rol rol) {
         super(login, nombre, email);
         this.apellidos = apellidos;
         this.dni = dni;
-        this.numTarjetaSanitaria = numTarjetaSanitaria;
-        this.numSeguridadSocial = numSeguridadSocial;
+        this.numColegiado = numColegiado;
         this.telefono = telefono;
         this.email = email;
-        this.fechaNacimiento = fechaNacimiento;
         this.centroSaludAsign = centroSaludAsign;
-        this.medicoAsignado = medicoAsignado;
         this.estado = estado;
         this.rol = rol;
-        this.direccion = direccion;
     }
 
-    
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "login", unique = true, nullable = false)
@@ -41,11 +35,8 @@ public class PacientesEntidad extends UsuarioEntidad {
     @Column(name = "dni")
     private String dni;
 
-    @Column(name = "numTarjetaSanitaria")
-    private String numTarjetaSanitaria;
-
-    @Column(name = "numSeguridadSocial")
-    private String numSeguridadSocial;
+    @Column(name = "numColegiado")
+    private String numColegiado;
 
     @Column(name = "telefono")
     private int telefono;
@@ -53,14 +44,8 @@ public class PacientesEntidad extends UsuarioEntidad {
     @Column(name = "email")
     private String email;
 
-    @Column(name = "fechaNacimiento")
-    private String fechaNacimiento;
-
     @Column(name = "centroSaludAsign")
     private String centroSaludAsign;
-
-    @Column(name = "medicoAsignado")
-    private String medicoAsignado;
 
     @Column(name = "Estado")
     @Enumerated(EnumType.STRING)
@@ -69,7 +54,6 @@ public class PacientesEntidad extends UsuarioEntidad {
     @Column(name = "Rol")
     @Enumerated(EnumType.STRING)
     private Rol rol;
-    private Direccion direccion;
 
     public String getLogin() {
         return login;
@@ -111,28 +95,12 @@ public class PacientesEntidad extends UsuarioEntidad {
         this.dni = dni;
     }
 
-    public String getNumTarjetaSanitaria() {
-        return numTarjetaSanitaria;
+    public String getNumColegiado() {
+        return numColegiado;
     }
 
-    public void setNumTarjetaSanitaria(String numTarjetaSanitaria) {
-        this.numTarjetaSanitaria = numTarjetaSanitaria;
-    }
-
-    public String getNumSeguridadSocial() {
-        return numSeguridadSocial;
-    }
-
-    public void setNumSeguridadSocial(String numSeguridadSocial) {
-        this.numSeguridadSocial = numSeguridadSocial;
-    }
-
-    public Direccion getDireccion() {
-        return direccion;
-    }
-
-    public void setDireccion(Direccion direccion) {
-        this.direccion = direccion;
+    public void setNumColegiado(String numColegiado) {
+        this.numColegiado = numColegiado;
     }
 
     public int getTelefono() {
@@ -151,28 +119,12 @@ public class PacientesEntidad extends UsuarioEntidad {
         this.email = email;
     }
 
-    public String getFechaNacimiento() {
-        return fechaNacimiento;
-    }
-
-    public void setFechaNacimiento(String fechaNacimiento) {
-        this.fechaNacimiento = fechaNacimiento;
-    }
-
     public String getCentroSaludAsignado() {
         return centroSaludAsign;
     }
 
     public void setCentroSaludAsignado(String centroSaludAsign) {
         this.centroSaludAsign = centroSaludAsign;
-    }
-
-    public String getMedicoAsignado() {
-        return medicoAsignado;
-    }
-
-    public void setMedicoAsignado(String medicoAsignado) {
-        this.medicoAsignado = medicoAsignado;
     }
 
     public Estado getEstado() {
