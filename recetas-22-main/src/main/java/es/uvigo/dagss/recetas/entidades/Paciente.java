@@ -1,11 +1,12 @@
 package es.uvigo.dagss.recetas.entidades;
 
+import java.util.Date;
 
 import javax.persistence.*;
 
 @Entity
 @PrimaryKeyJoinColumn(name = "usuariologin")
-public class Paciente extends Usuario   {
+public class Paciente extends Usuario {
 
     private String nombre;
     private String apellidos;
@@ -14,13 +15,21 @@ public class Paciente extends Usuario   {
     private String numSeguridadSocial;
     private String telefono;
     private String email;
-    private String fechaNacimiento;
+    
+    @Temporal(TemporalType.DATE)
+    private Date fechaNacimiento;
 
     @ManyToOne
     private Medico medicoAsignado;
 
     @Embedded
     private Direccion direccion;
+
+    /**
+     * 
+     */
+    public Paciente() {
+    }
 
     /**
      * @param login
@@ -40,7 +49,7 @@ public class Paciente extends Usuario   {
      */
     public Paciente(String login, String password, String nombre,
             String apellidos, String dni, String numTarjetaSanitaria, String numSeguridadSocial, String telefono,
-            String email, String fechaNacimiento, Medico medicoAsignado, Direccion direccion) {
+            String email, Date fechaNacimiento, Medico medicoAsignado, Direccion direccion) {
         super(login, password, Rol.PACIENTE);
         this.nombre = nombre;
         this.apellidos = apellidos;
@@ -155,14 +164,14 @@ public class Paciente extends Usuario   {
     /**
      * @return the fechaNacimiento
      */
-    public String getFechaNacimiento() {
+    public Date getFechaNacimiento() {
         return fechaNacimiento;
     }
 
     /**
      * @param fechaNacimiento the fechaNacimiento to set
      */
-    public void setFechaNacimiento(String fechaNacimiento) {
+    public void setFechaNacimiento(Date fechaNacimiento) {
         this.fechaNacimiento = fechaNacimiento;
     }
 

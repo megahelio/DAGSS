@@ -17,6 +17,12 @@ public class CentroSalud implements Serializable {
     @Enumerated(EnumType.STRING)
     private EstadoGeneral estado;
 
+    /**
+     * 
+     */
+    public CentroSalud() {
+    }
+
     public CentroSalud(String nombre, String telefono, String email, Direccion direccion) {
         this.nombre = nombre;
         this.telefono = telefono;

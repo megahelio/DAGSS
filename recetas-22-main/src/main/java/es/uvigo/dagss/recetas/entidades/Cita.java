@@ -17,7 +17,7 @@ public class Cita {
 
     @ManyToOne
     private Medico medicoAtiende;
-    
+
     private Date fechaCita;
     private int duracionCita;
 
@@ -25,21 +25,27 @@ public class Cita {
     private EstadoCita cita;
 
     /**
+     * 
+     */
+    public Cita() {
+    }
+
+    /**
      * @param id
      * @param pacienteCitado
      * @param medicoAtiende
      * @param fechaCita
      * @param duracionCita
-     * @param cita
      */
-    public Cita(Long id, Paciente pacienteCitado, Medico medicoAtiende, Date fechaCita,
-            int duracionCita, EstadoCita cita) {
-        this.id = id;
+    public Cita(Paciente pacienteCitado, Medico medicoAtiende, Date fechaCita,
+            int duracionCita) {
         this.pacienteCitado = pacienteCitado;
-        this.medicoAtiende = medicoAtiende;
+        this.medicoAtiende = medicoAtiende;// suponemos que a pesar de que el paciente tiene un medico asignado (Médico
+                                           // de cabecera) el
+                                           // paciente puede tener citas con otros medicos (Especialidades).
         this.fechaCita = fechaCita;
         this.duracionCita = duracionCita;
-        this.cita = cita;
+        this.cita = EstadoCita.PLANIFICADA;
     }
 
     /**

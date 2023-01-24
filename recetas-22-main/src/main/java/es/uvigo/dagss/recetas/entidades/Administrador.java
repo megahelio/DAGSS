@@ -7,7 +7,7 @@ import javax.persistence.*;
 
 @Entity
 @PrimaryKeyJoinColumn(name = "usuariologin")
-public class Administrador extends Usuario  {
+public class Administrador extends Usuario {
 
     private String nombre;
 
@@ -18,6 +18,22 @@ public class Administrador extends Usuario  {
 
     @Temporal(TemporalType.DATE)
     private Date fechaUltimoAcceso;
+
+    /**
+     * 
+     */
+    public Administrador() {
+        super();
+    }
+
+    /**
+     * @param login
+     * @param password
+     * @param rol
+     */
+    public Administrador(String login, String password, Rol rol) {
+        super(login, password, rol);
+    }
 
     public Administrador(String login, String password, String nombre, String email) {
         super(login, password, Rol.ADMINISTRADOR);

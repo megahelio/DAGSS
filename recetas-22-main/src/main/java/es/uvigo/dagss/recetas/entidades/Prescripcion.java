@@ -33,6 +33,12 @@ public class Prescripcion implements Serializable {
     private EstadoGeneral estado;
 
     /**
+     * 
+     */
+    public Prescripcion() {
+    }
+
+    /**
      * @param medicamento
      * @param paciente
      * @param medico

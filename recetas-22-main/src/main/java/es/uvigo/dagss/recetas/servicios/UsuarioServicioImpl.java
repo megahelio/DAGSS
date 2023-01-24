@@ -9,14 +9,12 @@ import org.springframework.transaction.annotation.Transactional;
 
 import es.uvigo.dagss.recetas.daos.UsuarioDAO;
 import es.uvigo.dagss.recetas.entidades.Usuario;
-
-
+import es.uvigo.dagss.recetas.servicios.Genericos.GenericoServicio;
 
 @Service
-public class UsuarioServicioImpl implements UsuarioServicio {
+public class UsuarioServicioImpl extends  {
     @Autowired
     UsuarioDAO dao;
-
 
     @Override
     @Transactional(readOnly = true)
@@ -26,13 +24,13 @@ public class UsuarioServicioImpl implements UsuarioServicio {
 
     @Override
     @Transactional(readOnly = true)
-    public Optional<Usuario> buscarPorLogin(String login) {
+    public Optional<Usuario> buscarPorId(String login) {
         return dao.findById(login);
     }
 
     @Override
-    public void eliminar(Usuario usuarioEntidad) {
-        dao.delete(usuarioEntidad);
+    public void eliminar(String login) {
+        dao.deleteById(login);
     }
 
     @Override

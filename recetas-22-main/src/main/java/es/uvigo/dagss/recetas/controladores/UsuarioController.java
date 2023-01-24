@@ -47,8 +47,8 @@ public class UsuarioController {
     }
 
     @GetMapping(path = "{login}")
-    public ResponseEntity<Usuario> buscarPorLogin(@PathVariable("login") String login) {
-        Optional<Usuario> usuarioentidad = usuarioServicio.buscarPorLogin(login);
+    public ResponseEntity<Usuario> buscarPorId(@PathVariable("login") String login) {
+        Optional<Usuario> usuarioentidad = usuarioServicio.buscarPorId(login);
 
         if (usuarioentidad.isPresent()) {
             return new ResponseEntity<>(usuarioentidad.get(), HttpStatus.OK);
@@ -60,9 +60,9 @@ public class UsuarioController {
     @DeleteMapping(path = "{login}")
     public ResponseEntity<HttpStatus> eliminar(@PathVariable("login") String login) {
         try {
-            Optional<Usuario> usuarioentidad = usuarioServicio.buscarPorLogin(login);
+            Optional<Usuario> usuarioentidad = usuarioServicio.buscarPorId(login);
             if (usuarioentidad.isPresent()) {
-                usuarioServicio.eliminar(usuarioentidad.get());
+                usuarioServicio.eliminar(usuarioentidad.get().getLogin());
                 return new ResponseEntity<>(HttpStatus.NO_CONTENT);
             } else {
                 return new ResponseEntity<>(HttpStatus.NOT_FOUND);
@@ -76,7 +76,7 @@ public class UsuarioController {
     @PutMapping(path = "{login}", consumes = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Usuario> modificar(@PathVariable("login") String login,
             @RequestBody Usuario usuarioentidad) {
-        Optional<Usuario> usuarioEntidadOptional = usuarioServicio.buscarPorLogin(login);
+        Optional<Usuario> usuarioEntidadOptional = usuarioServicio.buscarPorId(login);
 
         if (usuarioEntidadOptional.isPresent()) {
             Usuario nuevoUsuarioEntidad = usuarioServicio.modificar(usuarioentidad);
@@ -91,7 +91,7 @@ public class UsuarioController {
         try {
             String login = usuarioentidad.getLogin();
             if ((login != null) && !login.trim().isEmpty()) {
-                Optional<Usuario> usuarioEntidadOptional = usuarioServicio.buscarPorLogin(login);
+                Optional<Usuario> usuarioEntidadOptional = usuarioServicio.buscarPorId(login);
 
                 if (usuarioEntidadOptional.isPresent()) {
                     Usuario nuevoUsuarioEntidad = usuarioServicio.crear(usuarioentidad);

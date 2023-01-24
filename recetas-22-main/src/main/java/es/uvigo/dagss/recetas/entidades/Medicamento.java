@@ -20,6 +20,12 @@ public class Medicamento implements Serializable {
     private EstadoGeneral estado;
 
     /**
+     * 
+     */
+    public Medicamento() {
+    }
+
+    /**
      * @param id
      * @param nombreComercial
      * @param principioActivo

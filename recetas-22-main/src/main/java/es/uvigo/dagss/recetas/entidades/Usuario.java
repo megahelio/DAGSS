@@ -19,6 +19,12 @@ public class Usuario implements Serializable{
     @Enumerated(EnumType.STRING)
     private EstadoGeneral estado;
 
+    /**
+     * 
+     */
+    public Usuario() {
+    }
+
     public Usuario(String login, String password, Rol rol) {
         this.login = login;
         this.password = password;

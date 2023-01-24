@@ -14,12 +14,18 @@ public class Medico extends Usuario {
 
     private String numColegiado;
 
-    private int telefono;
+    private String telefono;
 
     private String email;
 
     @ManyToOne
     private CentroSalud centroSaludAsign;
+
+    /**
+     * 
+     */
+    public Medico() {
+    }
 
     /**
      * @param login
@@ -35,7 +41,7 @@ public class Medico extends Usuario {
      * @param centroSaludAsign
      */
     public Medico(String login, String password, String nombre,
-            String apellidos, String dni, String numColegiado, int telefono, String email,
+            String apellidos, String dni, String numColegiado, String telefono, String email,
             CentroSalud centroSaludAsign) {
         super(login, password, Rol.MÉDICO);
 
@@ -107,14 +113,14 @@ public class Medico extends Usuario {
     /**
      * @return the telefono
      */
-    public int getTelefono() {
+    public String getTelefono() {
         return telefono;
     }
 
     /**
      * @param telefono the telefono to set
      */
-    public void setTelefono(int telefono) {
+    public void setTelefono(String telefono) {
         this.telefono = telefono;
     }
 
@@ -160,7 +166,7 @@ public class Medico extends Usuario {
         result = prime * result + ((apellidos == null) ? 0 : apellidos.hashCode());
         result = prime * result + ((dni == null) ? 0 : dni.hashCode());
         result = prime * result + ((numColegiado == null) ? 0 : numColegiado.hashCode());
-        result = prime * result + telefono;
+        result = prime * result + ((telefono == null) ? 0 : telefono.hashCode());
         result = prime * result + ((email == null) ? 0 : email.hashCode());
         result = prime * result + ((centroSaludAsign == null) ? 0 : centroSaludAsign.hashCode());
         return result;

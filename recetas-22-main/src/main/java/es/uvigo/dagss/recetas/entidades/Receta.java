@@ -1,7 +1,7 @@
 package es.uvigo.dagss.recetas.entidades;
 
 import java.io.Serializable;
-import java.time.LocalDateTime;
+import java.util.Date;
 
 import javax.persistence.*;
 
@@ -14,9 +14,10 @@ public class Receta implements Serializable {
     @ManyToOne
     private Prescripcion prenscripcionReceta;
 
-    private LocalDateTime fechaInicioValidez;
-
-    private LocalDateTime fechaFinValidez;
+    @Temporal(TemporalType.DATE)
+    private Date fechaInicioValidez;
+    @Temporal(TemporalType.DATE)
+    private Date fechaFinValidez;
 
     private int numCajas;
 
@@ -27,6 +28,12 @@ public class Receta implements Serializable {
     private EstadoReceta receta;
 
     /**
+     * 
+     */
+    public Receta() {
+    }
+
+    /**
      * @param id
      * @param prenscripcionReceta
      * @param fechaInicioValidez
@@ -34,8 +41,8 @@ public class Receta implements Serializable {
      * @param numCajas
      * @param receta
      */
-    public Receta(Prescripcion prenscripcionReceta, LocalDateTime fechaInicioValidez,
-            LocalDateTime fechaFinValidez, int numCajas) {
+    public Receta(Prescripcion prenscripcionReceta, Date fechaInicioValidez,
+            Date fechaFinValidez, int numCajas) {
         this.prenscripcionReceta = prenscripcionReceta;
         this.fechaInicioValidez = fechaInicioValidez;
         this.fechaFinValidez = fechaFinValidez;
@@ -75,28 +82,28 @@ public class Receta implements Serializable {
     /**
      * @return the fechaInicioValidez
      */
-    public LocalDateTime getFechaInicioValidez() {
+    public Date getFechaInicioValidez() {
         return fechaInicioValidez;
     }
 
     /**
      * @param fechaInicioValidez the fechaInicioValidez to set
      */
-    public void setFechaInicioValidez(LocalDateTime fechaInicioValidez) {
+    public void setFechaInicioValidez(Date fechaInicioValidez) {
         this.fechaInicioValidez = fechaInicioValidez;
     }
 
     /**
      * @return the fechaFinValidez
      */
-    public LocalDateTime getFechaFinValidez() {
+    public Date getFechaFinValidez() {
         return fechaFinValidez;
     }
 
     /**
      * @param fechaFinValidez the fechaFinValidez to set
      */
-    public void setFechaFinValidez(LocalDateTime fechaFinValidez) {
+    public void setFechaFinValidez(Date fechaFinValidez) {
         this.fechaFinValidez = fechaFinValidez;
     }
 

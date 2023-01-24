@@ -10,6 +10,10 @@ public class Direccion implements Serializable{
     private String localidad;
     private String codigoPostal;
     private String provincia;
+  
+    /**
+     * 
+     */
     public Direccion() {
     }
 

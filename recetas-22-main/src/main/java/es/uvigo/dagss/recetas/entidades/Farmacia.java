@@ -23,6 +23,12 @@ public class Farmacia extends Usuario {
     private Direccion direccion;
 
     /**
+     * 
+     */
+    public Farmacia() {
+    }
+
+    /**
      * @param login
      * @param password
      * @param rol
@@ -38,7 +44,7 @@ public class Farmacia extends Usuario {
      */
     public Farmacia(String login, String password, Rol rol, String nif, String nombreEstablecimiento,
             String nombreFarmaceutico, String apellidosFarmaceutico, String numColegiado, String telefono, String email,
-            EstadoGeneral estado, Direccion direccion) {
+            Direccion direccion) {
         super(login, password, rol);
         this.nif = nif;
         this.nombreEstablecimiento = nombreEstablecimiento;
@@ -47,7 +53,6 @@ public class Farmacia extends Usuario {
         this.numColegiado = numColegiado;
         this.telefono = telefono;
         this.email = email;
-        this.estado = estado;
         this.direccion = direccion;
     }
 
