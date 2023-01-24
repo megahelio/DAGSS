@@ -47,7 +47,7 @@ public class MedicoController {
         }
     }
 
-    @GetMapping(path = "/login/{login}")
+    @GetMapping(path = "/{login}")
     public ResponseEntity<Medico> buscarPorId(@PathVariable("login") String login) {
         Optional<Medico> medicoentidad = medicoServicio.buscarPorId(login);
 
