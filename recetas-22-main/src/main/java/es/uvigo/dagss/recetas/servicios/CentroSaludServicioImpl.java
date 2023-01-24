@@ -4,11 +4,13 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import es.uvigo.dagss.recetas.daos.CentroSaludDAO;
 import es.uvigo.dagss.recetas.entidades.CentroSalud;
 import es.uvigo.dagss.recetas.servicios.Genericos.GenericoServicio;
 
+@Service
 public class CentroSaludServicioImpl implements GenericoServicio<CentroSalud, Long> {
     @Autowired
     CentroSaludDAO dao;

@@ -10,6 +10,6 @@ import es.uvigo.dagss.recetas.entidades.Medico;
 public interface MedicoDAO extends JpaRepository<Medico, String> {
     List<Medico> findByNombreContaining(String nombre);
 
-    List<Medico> findByCentroSaludAsignContaining(CentroSalud centroSaludAsign);
+    List<Medico> findByCentroSaludAsign(CentroSalud centroSaludAsign);
 
 }

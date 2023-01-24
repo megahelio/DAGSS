@@ -7,26 +7,26 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import es.uvigo.dagss.recetas.daos.RecetaDAO;
+import es.uvigo.dagss.recetas.daos.PrescripcionDAO;
+import es.uvigo.dagss.recetas.entidades.Paciente;
 import es.uvigo.dagss.recetas.entidades.Prescripcion;
-import es.uvigo.dagss.recetas.entidades.Receta;
 import es.uvigo.dagss.recetas.servicios.Genericos.GenericoServicio;
 
 @Service
-public class RecetaServicioImpl implements GenericoServicio<Receta, Long> {
+public class PrescripcionServicioImpl implements GenericoServicio<Prescripcion, Long> {
 
     @Autowired
-    RecetaDAO dao;
+    PrescripcionDAO dao;
 
     @Override
     @Transactional(readOnly = true)
-    public List<Receta> buscarTodos() {
+    public List<Prescripcion> buscarTodos() {
         return dao.findAll();
     }
 
     @Override
     @Transactional(readOnly = true)
-    public Optional<Receta> buscarPorId(Long id) {
+    public Optional<Prescripcion> buscarPorId(Long id) {
         return dao.findById(id);
     }
 
@@ -37,19 +37,19 @@ public class RecetaServicioImpl implements GenericoServicio<Receta, Long> {
 
     @Override
     @Transactional
-    public Receta modificar(Receta recetaentidad) {
-        return dao.save(recetaentidad);
+    public Prescripcion modificar(Prescripcion prescripcionentidad) {
+        return dao.save(prescripcionentidad);
     }
 
     @Override
     @Transactional
-    public Receta crear(Receta recetaentidad) {
+    public Prescripcion crear(Prescripcion prescripcionentidad) {
 
-        return dao.save(recetaentidad);
+        return dao.save(prescripcionentidad);
     }
 
-    public List<Receta> findByPrenscripcionRecetaContaining(Prescripcion prenscripcionReceta) {
-        return dao.findByPrenscripcionReceta(prenscripcionReceta);
+    public List<Prescripcion> buscarPorPacienteContaining(Paciente paciente) {
+        return dao.findByPaciente(paciente);
     }
 
 }

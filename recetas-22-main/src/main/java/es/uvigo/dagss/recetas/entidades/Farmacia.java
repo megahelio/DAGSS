@@ -3,7 +3,7 @@ package es.uvigo.dagss.recetas.entidades;
 import javax.persistence.*;
 
 @Entity
-@PrimaryKeyJoinColumn(name = "usuariologin")
+@PrimaryKeyJoinColumn(name = "login")
 public class Farmacia extends Usuario {
 
     private String nif;

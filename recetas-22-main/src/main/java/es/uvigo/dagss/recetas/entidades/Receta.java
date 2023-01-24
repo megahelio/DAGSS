@@ -14,6 +14,9 @@ public class Receta implements Serializable {
     @ManyToOne
     private Prescripcion prenscripcionReceta;
 
+    @ManyToOne
+    private Paciente paciente;
+
     @Temporal(TemporalType.DATE)
     private Date fechaInicioValidez;
     @Temporal(TemporalType.DATE)
@@ -149,12 +152,12 @@ public class Receta implements Serializable {
         this.receta = receta;
     }
 
-
-
-    /* (non-Javadoc)
+    /*
+     * (non-Javadoc)
+     * 
      * @see java.lang.Object#hashCode()
      */
-    
+
     @Override
     public int hashCode() {
         final int prime = 31;
@@ -167,10 +170,12 @@ public class Receta implements Serializable {
         return result;
     }
 
-    /* (non-Javadoc)
+    /*
+     * (non-Javadoc)
+     * 
      * @see java.lang.Object#equals(java.lang.Object)
      */
-    
+
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

@@ -6,6 +6,7 @@ import javax.persistence.*;
 
 @Entity
 @Inheritance(strategy=InheritanceType.JOINED )
+
 public class Usuario implements Serializable{
 
     @Id

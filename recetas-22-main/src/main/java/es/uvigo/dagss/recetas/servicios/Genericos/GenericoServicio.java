@@ -18,7 +18,7 @@ public interface GenericoServicio<T,K> {
 
     void eliminar(K id);
 
-    T modificar(T usuarioentidad);
+    T modificar(T entidad);
 
-    T crear(T usuarioentidad);
+    T crear(T entidad);
 }

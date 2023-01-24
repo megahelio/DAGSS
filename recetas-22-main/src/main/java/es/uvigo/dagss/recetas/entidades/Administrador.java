@@ -6,7 +6,7 @@ import java.time.Instant;
 import javax.persistence.*;
 
 @Entity
-@PrimaryKeyJoinColumn(name = "usuariologin")
+@PrimaryKeyJoinColumn(name = "login")
 public class Administrador extends Usuario {
 
     private String nombre;
@@ -26,14 +26,6 @@ public class Administrador extends Usuario {
         super();
     }
 
-    /**
-     * @param login
-     * @param password
-     * @param rol
-     */
-    public Administrador(String login, String password, Rol rol) {
-        super(login, password, rol);
-    }
 
     public Administrador(String login, String password, String nombre, String email) {
         super(login, password, Rol.ADMINISTRADOR);

@@ -5,7 +5,7 @@ import java.util.Date;
 import javax.persistence.*;
 
 @Entity
-@PrimaryKeyJoinColumn(name = "usuariologin")
+@PrimaryKeyJoinColumn(name = "login")
 public class Paciente extends Usuario {
 
     private String nombre;
