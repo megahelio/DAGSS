@@ -7,8 +7,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import es.uvigo.dagss.recetas.daos.AdministradorDAO;
 import es.uvigo.dagss.recetas.entidades.Administrador;
+import es.uvigo.dagss.recetas.servicios.Genericos.GenericoServicio;
 
-public class AdministradorServicioImpl implements AdministradorServicio {
+public class AdministradorServicioImpl implements GenericoServicio<Administrador, String> {
     @Autowired
     AdministradorDAO dao;
 

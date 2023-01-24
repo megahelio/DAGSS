@@ -12,7 +12,7 @@ import es.uvigo.dagss.recetas.entidades.Usuario;
 import es.uvigo.dagss.recetas.servicios.Genericos.GenericoServicio;
 
 @Service
-public class UsuarioServicioImpl extends  {
+public class UsuarioServicioImpl implements GenericoServicio<Usuario, String> {
     @Autowired
     UsuarioDAO dao;
 

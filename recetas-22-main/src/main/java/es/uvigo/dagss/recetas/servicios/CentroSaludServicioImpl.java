@@ -7,39 +7,36 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import es.uvigo.dagss.recetas.daos.CentroSaludDAO;
 import es.uvigo.dagss.recetas.entidades.CentroSalud;
+import es.uvigo.dagss.recetas.servicios.Genericos.GenericoServicio;
 
-public class CentroSaludServicioImpl implements CentroSaludServicio {
+public class CentroSaludServicioImpl implements GenericoServicio<CentroSalud, Long> {
     @Autowired
     CentroSaludDAO dao;
 
     @Override
     public List<CentroSalud> buscarTodos() {
-        // TODO Auto-generated method stub
-        return null;
+        return dao.findAll();
     }
 
     @Override
     public Optional<CentroSalud> buscarPorId(Long id) {
-        // TODO Auto-generated method stub
-        return Optional.empty();
+        return dao.findById(id);
     }
 
     @Override
     public void eliminar(Long id) {
-        // TODO Auto-generated method stub
+        dao.deleteById(id);;
 
     }
 
     @Override
     public CentroSalud modificar(CentroSalud usuarioentidad) {
-        // TODO Auto-generated method stub
-        return null;
+        return dao.save(usuarioentidad);
     }
 
     @Override
     public CentroSalud crear(CentroSalud usuarioentidad) {
-        // TODO Auto-generated method stub
-        return null;
+        return dao.save(usuarioentidad);
     }
 
 }

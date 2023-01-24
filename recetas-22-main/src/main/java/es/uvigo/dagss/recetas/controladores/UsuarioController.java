@@ -20,14 +20,14 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import es.uvigo.dagss.recetas.entidades.Usuario;
-import es.uvigo.dagss.recetas.servicios.UsuarioServicio;
+import es.uvigo.dagss.recetas.servicios.UsuarioServicioImpl;
 
 @RestController
 @RequestMapping(path = "/api/usuario", produces = MediaType.APPLICATION_JSON_VALUE)
 public class UsuarioController {
 
     @Autowired
-    UsuarioServicio usuarioServicio;
+    UsuarioServicioImpl usuarioServicio;
 
     @GetMapping()
     public ResponseEntity<List<Usuario>> buscarTodos() {

@@ -6,8 +6,6 @@ import javax.persistence.*;
 @PrimaryKeyJoinColumn(name = "usuariologin")
 public class Farmacia extends Usuario {
 
-    
-
     private String nif;
     private String nombreEstablecimiento;
     private String nombreFarmaceutico;
@@ -54,6 +52,7 @@ public class Farmacia extends Usuario {
         this.telefono = telefono;
         this.email = email;
         this.direccion = direccion;
+        this.estado = EstadoGeneral.ACTIVO;
     }
 
     /**
