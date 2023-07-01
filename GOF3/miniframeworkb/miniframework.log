@@ -1,0 +1,7 @@
+[2023-06-23T19:44:14.468702600] [DEBUG] Seleccionó: 3
+[2023-06-23T19:44:14.470719100] [DEBUG] Inició adquisición parámetros
+[2023-06-23T19:44:14.471707400] [DEBUG] Solicita parametro: Radical
+[2023-06-23T19:44:18.640347500] [DEBUG] Parametro: Radical = 3
+[2023-06-23T19:44:18.642339900] [INFO] Sqrt finalizada: 1.7320508075688772
+[2023-06-23T19:44:21.078093300] [DEBUG] Seleccionó: 0
+[2023-06-23T19:44:21.078093300] [DEBUG] Solicitó salir del programa
